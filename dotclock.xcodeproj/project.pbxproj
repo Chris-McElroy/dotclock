@@ -13,6 +13,8 @@
 		1E78F4F22834375C00EFAABA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E78F4E02834375900EFAABA /* ContentView.swift */; };
 		1E78F4F32834375C00EFAABA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1E78F4E12834375C00EFAABA /* Assets.xcassets */; };
 		1E78F4F42834375C00EFAABA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1E78F4E12834375C00EFAABA /* Assets.xcassets */; };
+		1E99FFD0283A130900E65B2B /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E99FFCF283A130900E65B2B /* Settings.swift */; };
+		1E99FFD1283A130900E65B2B /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E99FFCF283A130900E65B2B /* Settings.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,8 @@
 		1E78F4E62834375C00EFAABA /* dotclock.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = dotclock.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1E78F4EC2834375C00EFAABA /* dotclock.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = dotclock.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1E78F4EE2834375C00EFAABA /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
+		1E99FFCF283A130900E65B2B /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		1EA1DF0528404D89003FBC4A /* dotclock--iOS--Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "dotclock--iOS--Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +49,7 @@
 		1E78F4D92834375900EFAABA = {
 			isa = PBXGroup;
 			children = (
+				1EA1DF0528404D89003FBC4A /* dotclock--iOS--Info.plist */,
 				1E78F4DE2834375900EFAABA /* Shared */,
 				1E78F4ED2834375C00EFAABA /* macOS */,
 				1E78F4E72834375C00EFAABA /* Products */,
@@ -56,6 +61,7 @@
 			children = (
 				1E78F4DF2834375900EFAABA /* dotclockApp.swift */,
 				1E78F4E02834375900EFAABA /* ContentView.swift */,
+				1E99FFCF283A130900E65B2B /* Settings.swift */,
 				1E78F4E12834375C00EFAABA /* Assets.xcassets */,
 			);
 			path = Shared;
@@ -176,6 +182,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1E99FFD0283A130900E65B2B /* Settings.swift in Sources */,
 				1E78F4F12834375C00EFAABA /* ContentView.swift in Sources */,
 				1E78F4EF2834375C00EFAABA /* dotclockApp.swift in Sources */,
 			);
@@ -185,6 +192,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1E99FFD1283A130900E65B2B /* Settings.swift in Sources */,
 				1E78F4F22834375C00EFAABA /* ContentView.swift in Sources */,
 				1E78F4F02834375C00EFAABA /* dotclockApp.swift in Sources */,
 			);
@@ -243,6 +251,9 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = AccentColor;
+				INFOPLIST_KEY_UIStatusBarHidden = YES;
+				INFOPLIST_KEY_WKExtensionDelegateClassName = "";
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -295,6 +306,9 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = AccentColor;
+				INFOPLIST_KEY_UIStatusBarHidden = YES;
+				INFOPLIST_KEY_WKExtensionDelegateClassName = "";
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;
@@ -312,14 +326,16 @@
 				DEVELOPMENT_TEAM = UA923ZLYMM;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "dotclock--iOS--Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = AccentColor;
 				INFOPLIST_KEY_UIRequiresFullScreen = YES;
 				INFOPLIST_KEY_UIStatusBarHidden = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKExtensionDelegateClassName = "";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -345,14 +361,16 @@
 				DEVELOPMENT_TEAM = UA923ZLYMM;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "dotclock--iOS--Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = AccentColor;
 				INFOPLIST_KEY_UIRequiresFullScreen = YES;
 				INFOPLIST_KEY_UIStatusBarHidden = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKExtensionDelegateClassName = "";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
