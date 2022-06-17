@@ -17,6 +17,7 @@ struct dotclockApp: App {
 					if let window = (UIApplication.shared.connectedScenes.first as? UIWindowScene)?.windows.first {
 						window.rootViewController?.view.backgroundColor = .black
 					}
+					Notifications.ifUndetermined({ Notifications.turnOn(callBack: { print("on", $0) }) })
 				}
 		}
     }

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1E723B162843249B009BADC7 /* NotificationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E723B152843249B009BADC7 /* NotificationHelper.swift */; };
+		1E723B172843249B009BADC7 /* NotificationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E723B152843249B009BADC7 /* NotificationHelper.swift */; };
 		1E78F4EF2834375C00EFAABA /* dotclockApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E78F4DF2834375900EFAABA /* dotclockApp.swift */; };
 		1E78F4F02834375C00EFAABA /* dotclockApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E78F4DF2834375900EFAABA /* dotclockApp.swift */; };
 		1E78F4F12834375C00EFAABA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E78F4E02834375900EFAABA /* ContentView.swift */; };
@@ -18,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1E723B152843249B009BADC7 /* NotificationHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationHelper.swift; sourceTree = "<group>"; };
 		1E78F4DF2834375900EFAABA /* dotclockApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dotclockApp.swift; sourceTree = "<group>"; };
 		1E78F4E02834375900EFAABA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		1E78F4E12834375C00EFAABA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -61,6 +64,7 @@
 			children = (
 				1E78F4DF2834375900EFAABA /* dotclockApp.swift */,
 				1E78F4E02834375900EFAABA /* ContentView.swift */,
+				1E723B152843249B009BADC7 /* NotificationHelper.swift */,
 				1E99FFCF283A130900E65B2B /* Settings.swift */,
 				1E78F4E12834375C00EFAABA /* Assets.xcassets */,
 			);
@@ -184,6 +188,7 @@
 			files = (
 				1E99FFD0283A130900E65B2B /* Settings.swift in Sources */,
 				1E78F4F12834375C00EFAABA /* ContentView.swift in Sources */,
+				1E723B162843249B009BADC7 /* NotificationHelper.swift in Sources */,
 				1E78F4EF2834375C00EFAABA /* dotclockApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -194,6 +199,7 @@
 			files = (
 				1E99FFD1283A130900E65B2B /* Settings.swift in Sources */,
 				1E78F4F22834375C00EFAABA /* ContentView.swift in Sources */,
+				1E723B172843249B009BADC7 /* NotificationHelper.swift in Sources */,
 				1E78F4F02834375C00EFAABA /* dotclockApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

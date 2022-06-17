@@ -160,31 +160,48 @@ struct ContentView: View {
 			Spacer().frame(height: 22)
 			Spacer()
 			if timer {
-				HStack {
+				HStack(spacing: 10) {
 					Spacer()
+					if !settings.minuteHand { Spacer().frame(width: 0) }
 					Circle()
 						.foregroundColor(getColor(time: timerOffset - time, mod: 8, div: 180))
-						.frame(width: 30, height: 30)
+						.frame(width: 40, height: 30)
 						.onTapGesture {
-							timerOffset += 180
+							if (timerOffset - time)/180 % 8 == 7 {
+								timerOffset = time + 86400
+							} else {
+								timerOffset += 180
+							}
 						}
 					Circle()
 						.foregroundColor(getColor(time: timerOffset - time, mod: 6, div: 30))
-						.frame(width: 30, height: 30)
+						.frame(width: 40, height: 30)
 						.onTapGesture {
-							timerOffset += 30
+							if (timerOffset - time)/30 % 6 == 5 {
+								timerOffset -= 150
+							} else {
+								timerOffset += 30
+							}
 						}
 					Circle()
 						.foregroundColor(getColor(time: timerOffset - time, mod: 6, div: 5))
-						.frame(width: 30, height: 30)
+						.frame(width: 40, height: 30)
 						.onTapGesture {
-							timerOffset += 5
+							if (timerOffset - time)/5 % 6 == 5 {
+								timerOffset -= 25
+							} else {
+								timerOffset += 5
+							}
 						}
 					Circle()
 						.foregroundColor(getColor(time: timerOffset - time, mod: 5, div: 1))
-						.frame(width: settings.minuteHand ? 30 : 0, height: 30)
+						.frame(width: settings.minuteHand ? 40 : 0, height: 30)
 						.onTapGesture {
-							timerOffset += 1
+							if (timerOffset - time) % 5 == 4 {
+								timerOffset -= 4
+							} else {
+								timerOffset += 1
+							}
 						}
 					Spacer()
 				}
@@ -193,15 +210,16 @@ struct ContentView: View {
 			}
 			HStack(spacing: 10) {
 				Spacer()
+				if !settings.minuteHand { Spacer().frame(width: 0) }
 				Circle()
 					.foregroundColor(getColor(time: time, mod: settings.dayMode ? 8 : 4, div: 180))
-					.frame(width: 30, height: 30)
+					.frame(width: 40, height: 30)
 					.onTapGesture {
 						settings.dayMode.toggle()
 					}
 				Circle()
 					.foregroundColor(getColor(time: time, mod: 6, div: 30))
-					.frame(width: 30, height: 30)
+					.frame(width: 40, height: 30)
 					.onTapGesture {
 						if timer {
 							timer = false
@@ -213,20 +231,39 @@ struct ContentView: View {
 					}
 				Circle()
 					.foregroundColor(getColor(time: time, mod: 6, div: 5))
-					.frame(width: 30, height: 30)
+					.frame(width: 40, height: 30)
 					.onTapGesture {
 						Settings.main.minuteHand.toggle()
 					}
 				Circle()
 					.foregroundColor(getColor(time: time, mod: 5, div: 1))
-					.frame(width: settings.minuteHand ? 30 : 0, height: 30)
-				
+					.frame(width: settings.minuteHand ? 40 : 0, height: 30)
 				Spacer()
 			}
 			.frame(height: 30)
 			Spacer()
 		}
 		.onAppear {
+			
+			
+			let content = UNMutableNotificationContent()
+			content.title = "Late wake up call"
+			content.body = "The early bird catches the worm, but the second mouse gets the cheese."
+			content.categoryIdentifier = "alarm"
+			content.userInfo = ["customData": "fizzbuzz"]
+			content.sound = UNNotificationSound.default
+
+//			var dateComponents = DateComponents()
+//			dateComponents.hour = 0
+//			dateComponents.minute = 0
+			let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
+
+			let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
+			UNUserNotificationCenter.current().add(request)
+			print("added?")
+			
+			
+			
 			getTime()
 			Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true, block: { _ in
 				getTime()
@@ -246,7 +283,7 @@ struct ContentView: View {
 			Color(.displayP3, red: 1.0, green: 0.0, blue: 1.0, opacity: 1.0),
 			Color(.displayP3, red: 1.0, green: 1.0, blue: 1.0, opacity: 1.0),
 			Color(.displayP3, red: 0.0, green: 0.0, blue: 0.0, opacity: 1.0)
-		][(((disp/div) % mod) + mod) % mod]
+		][((disp + 86400)/div) % mod]
 	}
 	
 	func getTime() {
